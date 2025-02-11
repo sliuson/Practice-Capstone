@@ -11,7 +11,7 @@
     const params = new URLSearchParams(window.location.search);
     const answers = ["answer 3", "2","hi!","1"];
     const correctAnswers = 9;
-    for(i = 0; i < params.size(); i ++){
+    for(i = 0; i < params.size; i ++){
         if(params.get('q'+i) == answers[i]){
             correctAnswers++;
         }

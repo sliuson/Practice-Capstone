@@ -13,19 +13,14 @@
         const answers = ["3", "2","yo","1"];
         const user_answers = params.values();
 
-        const test_results = [0,0,0,0]
-        const score = 0;
-        for (const i = 0; i < 4; i++){
+        let test_results = [0,0,0,0]
+        let score = 0;
+        for (let i = 0; i < 4; i++){
             if(user_answers[i] == answers[i]){
-                console.log(user_answers[i])
-                console.log(answers[i])
-                console.log("------")
                 correctAnswers[i] == 1;
                 score ++;
             }
         }
-        document.getElementById("result message").innerHTML = "YOU WIN";
-        console.log("hi")
         if(score >=4 ){
             document.getElementById("result message").innerHTML = "YOU WIN";
         }

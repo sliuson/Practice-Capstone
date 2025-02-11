@@ -6,19 +6,29 @@
 </head>
 <body>
     <!--this is a comment! >:)-->
-    <h1 id="result message">"YOU LOSE"</h1>
+    <h1 id="result message">YOU LOSE</h1>
 
     <script>
-    const params = new URLSearchParams(window.location.search);
-    const answers = ["3", "2","yo","1"];
-    const correctAnswers = 0;
-    params.forEach((value, key) => {
-        console.log(value);
-    });
-    if(correctAnswers == 4){
-        document.getElementById("result message").innerHTML = "YOU WIN!"
-    }
-    
+        const params = new URLSearchParams(window.location.search);
+        const answers = ["3", "2","yo","1"];
+        const user_answers = params.values();
+
+        const test_results = [0,0,0,0]
+        const score = 0;
+        for (const i = 0; i < 4; i++){
+            if(user_answers[i] == answers[i]){
+                console.log(user_answers[i])
+                console.log(answers[i])
+                console.log("------")
+                correctAnswers[i] == 1;
+                score ++;
+            }
+        }
+        document.getElementById("result message").innerHTML = "YOU WIN";
+        console.log("hi")
+        if(score >=4 ){
+            document.getElementById("result message").innerHTML = "YOU WIN";
+        }
     </script>
 
     <a href="html_quiz.html">Go back</a>

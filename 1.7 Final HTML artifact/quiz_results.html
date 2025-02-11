@@ -6,23 +6,21 @@
 </head>
 <body>
     <!--this is a comment! >:)-->
-    <h1 id="result message">YOU LOSE</h1>
+    <div id="result message">YOU LOSE<br><img src="frown.jpeg"></div>
 
     <script>
         const params = new URLSearchParams(window.location.search);
-        const answers = ["3", "2","yo","1"];
-        const user_answers = params.values();
+        const answer_key = ["3", "2","yo","1"];
 
-        let test_results = [0,0,0,0]
         let score = 0;
         for (let i = 0; i < 4; i++){
-            if(user_answers[i] == answers[i]){
-                correctAnswers[i] == 1;
-                score ++;
+            
+            if(params.get("q"+(i+1)) == answer_key[i]){
+                score++;
             }
         }
         if(score >=4 ){
-            document.getElementById("result message").innerHTML = "YOU WIN";
+            document.getElementById("result message").innerHTML = "<h1>YOU WIN</h1><br><img src='smile.jpeg'>";
         }
     </script>
 

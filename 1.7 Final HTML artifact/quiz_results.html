@@ -5,10 +5,23 @@
     <title>Quiz Results</title>
 </head>
 <body>
+    <h1 id="result message"></h1>
+
     <script>
     const params = new URLSearchParams(window.location.search);
-    const answers = ["answer 3", "2","hi!","1"]
-    console.log(params)
+    const answers = ["answer 3", "2","hi!","1"];
+    const correctAnswers = 9;
+    for(i = 0; i < params.size(); i ++){
+        if(params.get('q'+i) == answers[i]){
+            correctAnswers++;
+        }
+    }
+    if(correctAnswers == 4){
+        document.getElementById("result message").innerHTML = "YOU WIN!"
+    }else{
+        document.getElementById("result message").innerHTML = "YOU LOSE"
+    }
+    
     </script>
 </body>
 </html>
